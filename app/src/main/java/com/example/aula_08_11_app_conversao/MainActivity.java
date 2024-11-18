@@ -46,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
                 case "Real -> Dolar":
                     opcaoSelecionada = "BRL-USD";
                     break;
+                case "Real -> Euro":
+                    opcaoSelecionada = "BRL-EUR";
+                    break;
+                case "Bitcoin -> Real":
+                    opcaoSelecionada = "BTC-BRL";
+                    break;
+                case "Dolar -> Euro":
+                    opcaoSelecionada = "USD-EUR";
+                    break;
+                case "Real -> Sol do Peru":
+                    opcaoSelecionada = "BRL-PEN";
+                    break;
                 default:
                     break;
             }
@@ -78,7 +90,15 @@ public class MainActivity extends AppCompatActivity {
                     JsonObject jsonObject = JsonParser.parseString(result).getAsJsonObject();
                     if (jsonObject.has("BRLUSD")) {
                         currencyRate = gson.fromJson(jsonObject.get("BRLUSD"), CurrencyRate.class);
-                    } else {
+                    } else if(jsonObject.has("BRLEUR")){
+                        currencyRate = gson.fromJson(jsonObject.get("BRLEUR"), CurrencyRate.class);
+                    } else if(jsonObject.has("BTCBRL")){
+                        currencyRate = gson.fromJson(jsonObject.get("BTCBRL"), CurrencyRate.class);
+                    }else if(jsonObject.has("USDEUR")){
+                        currencyRate = gson.fromJson(jsonObject.get("USDEUR"), CurrencyRate.class);
+                    }else if(jsonObject.has("BRLPEN")){
+                        currencyRate = gson.fromJson(jsonObject.get("BRLPEN"), CurrencyRate.class);
+                    }else{
                         Toast.makeText(getApplicationContext(), "Não foi possível encontrar o valor da moeda", Toast.LENGTH_SHORT).show();
                     }
 

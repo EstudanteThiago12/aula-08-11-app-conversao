@@ -22,8 +22,8 @@
 
     <RadioGroup
         android:id="@+id/opcoes"
-        android:layout_width="135dp"
-        android:layout_height="143dp"
+        android:layout_width="164dp"
+        android:layout_height="287dp"
         android:layout_marginTop="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +34,30 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Real -> Dolar" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Real -> Euro" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bitcoin -> Real" />
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dolar -> Euro" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Real -> Sol do Peru" />
     </RadioGroup>
 
     <TextView
